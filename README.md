@@ -7,13 +7,8 @@ Note that this Spark ONLY provides the authorization mechanism. There's an examp
 ## Currently Supported
 
 - Facebook
-- Foursquare
 - GitHub
-- Google
-- Instagram
-- Unmagnify
-- Windows Live
-- YouTube
+- Windows Live Connect (Windows Live)
 
 ## TODO
 
