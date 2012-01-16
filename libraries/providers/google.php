@@ -59,15 +59,16 @@ class OAuth2_Provider_Google extends OAuth2_Provider {
 		));
 		
 		$user = json_decode(file_get_contents($url), true);
+		
 		return array(
 			'uid' => $user['id'],
 			'nickname' => url_title($user['name'], '_', true),
 			'name' => $user['name'],
 			'first_name' => $user['given_name'],
 			'last_name' => $user['family_name'],
-			'email' => $user['email'],
+			'email' => null,
 			'location' => null,
-			'image' => $user['picture'],
+			'image' => null,
 			'description' => null,
 			'urls' => array(),
 		);
