@@ -76,7 +76,7 @@ class OAuth2_Provider_Google extends OAuth2_Provider
 			'last_name' => $user['family_name'],
 			'email' => $user['email'],
 			'location' => null,
-			'image' => (isset($user['picture'])) ? $user['picture'] : null,
+			'image' => $user['picture'],
 			'description' => null,
 			'urls' => array(),
 		);
