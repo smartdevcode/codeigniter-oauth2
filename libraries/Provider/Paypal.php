@@ -14,7 +14,7 @@ class OAuth2_Provider_Paypal extends OAuth2_Provider
     /**
      * @var  string  default scope (useful if a scope is required for user info)
      */
-    protected $scope = array('https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/userinfo');
+    protected $scope = array('https://identity.x.com/xidentity/resources/profile/me');
 
     /**
      * @var  string  the method to use when requesting tokens
@@ -23,17 +23,17 @@ class OAuth2_Provider_Paypal extends OAuth2_Provider
 
     public function url_authorize()
     {
-        return 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/authorize';
+        return 'https://identity.x.com/xidentity/resources/authorize';
     }
 
     public function url_access_token()
     {
-        return 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/tokenservice';
+        return 'https://identity.x.com/xidentity/oauthtokenservice';
     }
 
     public function get_user_info(OAuth2_Token_Access $token)
     {
-        $url = 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/userinfo?' . http_build_query(array(
+        $url = 'https://identity.x.com/xidentity/resources/profile/me?' . http_build_query(array(
             'oauth_token' => $token->access_token
         ));
 
